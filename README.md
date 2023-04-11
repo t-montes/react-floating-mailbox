@@ -7,6 +7,9 @@
 [![npm size](https://img.shields.io/bundlephobia/min/react-floating-mailbox)](https://www.npmjs.com/package/react-floating-mailbox)
 [![license](https://img.shields.io/github/license/t-montes/react-floating-mailbox)](/LICENSE)
 
+<p align="center">
+  <img src="./resources/example-react-floating-mailbox.gif" alt="example"  width="40%"/>
+</p>
 
 ## Installation
 

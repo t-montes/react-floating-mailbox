@@ -17,7 +17,6 @@
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   font-size: 20px;
   height: 60px;
   width: 60px;
@@ -26,25 +25,27 @@
 
 .floating-button button {
   background-color: #4CAF50;
+  cursor: pointer;
 }
 
 .floating-button-sent button {
-  background-color: #2196F3;
+  background-color: #3e8e41;
   margin-bottom: 6px;
+  cursor: default;
 }
 
 .floating-button svg {
   width: 60px;
   height: 60px;
   /* Center align the SVG, to the button */
-  margin: 0px 0px 0px -1px; /* top right bottom left */
+  margin: 0px 0px 0px -5px; /* top right bottom left */
 }
 
 .floating-button-sent svg {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   /* Center align the SVG, to the button */
-  margin: 3px 0px 0px -2px; /* top right bottom left */
+  margin: 5px 0px 0px 0px; /* top right bottom left */
 }
 
 .floating-button button:hover {
