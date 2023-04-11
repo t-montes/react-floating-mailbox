@@ -1,0 +1,110 @@
+.unactive {
+  display: none !important;
+}
+
+.floating-button-sent,
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+.floating-button-sent button,
+.floating-button button {
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 20px;
+  height: 60px;
+  width: 60px;
+  outline: none;
+}
+
+.floating-button button {
+  background-color: #4CAF50;
+}
+
+.floating-button-sent button {
+  background-color: #2196F3;
+  margin-bottom: 6px;
+}
+
+.floating-button svg {
+  width: 60px;
+  height: 60px;
+  /* Center align the SVG, to the button */
+  margin: 0px 0px 0px -5px; /* top right bottom left */
+}
+
+.floating-button-sent svg {
+  width: 45px;
+  height: 45px;
+  /* Center align the SVG, to the button */
+  margin: 3px 0px 0px -2px; /* top right bottom left */
+}
+
+.floating-button button:hover {
+  background-color: #3e8e41;
+}
+
+.floating-button button:focus {
+  outline: none;
+}
+
+.floating-button button:active {
+  transform: translateY(2px);
+}
+
+.wiggler {
+  animation: wiggle .1s infinite alternate;
+}
+
+.floating-form {
+  background-color: #FFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 10px 20px; /* top right bottom left */
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 275px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.floating-form input ,
+.floating-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  resize: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.floating-form textarea {
+  height: 100px;
+}
+
+.floating-form button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: auto;
+  padding: 5px 5px 5px 5px; /* top right bottom left */
+  cursor: pointer;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
