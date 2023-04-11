@@ -1,6 +1,6 @@
 {
   "name": "react-floating-mailbox",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple react floating action button that is meant to send a suggestion mail to an specific e-mail",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
