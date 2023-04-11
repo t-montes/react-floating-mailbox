@@ -3,9 +3,9 @@
 `react-floating-mailbox` is a React component that renders a floating mailbox button on your page. When the button is clicked, it opens a modal that allows users to send an email using EmailJS.
 
 [![npm version](https://img.shields.io/npm/v/react-floating-mailbox.svg)](https://www.npmjs.com/package/react-floating-mailbox)
-![npm downloads](https://img.shields.io/npm/dm/react-floating-mailbox)
-![npm size](https://img.shields.io/bundlephobia/min/react-floating-mailbox)
-![GitHub](https://img.shields.io/github/license/t-montes/react-floating-mailbox)
+[![npm downloads](https://img.shields.io/npm/dm/react-floating-mailbox)](https://www.npmjs.com/package/react-floating-mailbox)
+[![npm size](https://img.shields.io/bundlephobia/min/react-floating-mailbox)](https://www.npmjs.com/package/react-floating-mailbox)
+[![license](https://img.shields.io/github/license/t-montes/react-floating-mailbox)](/LICENSE)
 
 
 ## Installation

@@ -29,7 +29,6 @@ function FloatingMailbox(props) {
           },
           (error)  => console.log(error.text)
         );
-        setIsSent(!isSent);
     }
 
     return (

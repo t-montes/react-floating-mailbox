@@ -1,7 +1,7 @@
 {
   "name": "react-floating-mailbox",
   "version": "1.0.7",
-  "description": "A simple react floating action button that is meant to send a suggestion mail to an specific e-mail",
+  "description": "A React component that renders a floating mailbox action button on your page. When the button is clicked, it opens a modal that allows users to send a feedback/suggestion email using EmailJS.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
