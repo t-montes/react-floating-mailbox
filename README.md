@@ -8,7 +8,7 @@
 [![license](https://img.shields.io/github/license/t-montes/react-floating-mailbox)](/LICENSE)
 
 <p align="center">
-  <img src="./resources/example-react-floating-mailbox.gif" alt="example"  style="width:40%;min-width:300px;"/>
+  <img src="./resources/example-react-floating-mailbox.gif" alt="example"  style="width:100%;min-width:300px;"/>
 </p>
 
 ## Installation
