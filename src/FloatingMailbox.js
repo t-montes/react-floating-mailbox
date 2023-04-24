@@ -9,6 +9,7 @@ function FloatingMailbox(props) {
      * @param {string} userId - Email user id
      * @param {string} to [optional] - Email address to send the email to
      * @param {string} subject [optional] - Default (non- ) subject for the email
+     * @param {string} header [optional] - Custom header for the email
      */
 
     const [isOpen, setIsOpen] = useState(false);
@@ -74,6 +75,12 @@ function FloatingMailbox(props) {
           </button>
 
           <form className={`floating-form ${isOpen ? "" : "unactive"}`} onSubmit={sendEmail}>
+              {
+                props.header ?
+                <p>{props.header}</p>
+                :
+                <></>
+              }
               { props.to ?
                 <input type="email" name="to_email" className="unactive" defaultValue={props.to} />
                 : 
@@ -81,7 +88,7 @@ function FloatingMailbox(props) {
               }
               {
                 props.subject ?
-                <input type="text" name="subject" defaultValue={props.subject} readOnly />
+                <input type="text" name="subject" className="unactive" defaultValue={props.subject} />
                 :
                 <input type="text" name="subject" placeholder="Subject" required />
               }

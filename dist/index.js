@@ -162,6 +162,7 @@ function FloatingMailbox(props) {
    * @param {string} userId - Email user id
    * @param {string} to [optional] - Email address to send the email to
    * @param {string} subject [optional] - Default (non- ) subject for the email
+   * @param {string} header [optional] - Custom header for the email
    */
 
   const [isOpen, setIsOpen] = React.useState(false);
@@ -172,7 +173,6 @@ function FloatingMailbox(props) {
       console.log(result.text);
       if (result.text === "OK") setIsSent(!isSent);
     }, error => console.log(error.text));
-    setIsSent(!isSent);
   }
   return /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null, isSent ? /*#__PURE__*/React__default["default"].createElement("div", {
     className: "floating-button-sent"
@@ -216,7 +216,7 @@ function FloatingMailbox(props) {
   })))), /*#__PURE__*/React__default["default"].createElement("form", {
     className: `floating-form ${isOpen ? "" : "unactive"}`,
     onSubmit: sendEmail
-  }, props.to ? /*#__PURE__*/React__default["default"].createElement("input", {
+  }, props.header ? /*#__PURE__*/React__default["default"].createElement("p", null, props.header) : /*#__PURE__*/React__default["default"].createElement(React__default["default"].Fragment, null), props.to ? /*#__PURE__*/React__default["default"].createElement("input", {
     type: "email",
     name: "to_email",
     className: "unactive",
@@ -229,8 +229,8 @@ function FloatingMailbox(props) {
   }), props.subject ? /*#__PURE__*/React__default["default"].createElement("input", {
     type: "text",
     name: "subject",
-    defaultValue: props.subject,
-    readOnly: true
+    className: "unactive",
+    defaultValue: props.subject
   }) : /*#__PURE__*/React__default["default"].createElement("input", {
     type: "text",
     name: "subject",
