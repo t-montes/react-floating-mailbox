@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FloatingMailbox.css";
 import emailjs from 'emailjs-com';
 
@@ -13,7 +13,12 @@ function FloatingMailbox(props) {
      */
 
     const [isOpen, setIsOpen] = useState(false);
+    const [hasBeenOpened, setHasBeenOpened] = useState(false);
     const [isSent, setIsSent] = useState(false);
+
+    useEffect(() => {
+      setHasBeenOpened(true);
+    }, [isOpen]);
 
     function sendEmail(e) {
       e.preventDefault();
@@ -53,7 +58,7 @@ function FloatingMailbox(props) {
         :
         <div className="floating-button">
             <button onClick={() => setIsOpen(!isOpen)}>
-            <svg className={`${isOpen ? "" : "wiggler"}`} version="1.0" xmlns="http://www.w3.org/2000/svg"
+            <svg className={`${hasBeenOpened ? "" : "wiggler"}`} version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="560.000000pt" height="560.000000pt" viewBox="0 0 560.000000 560.000000"
             preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,560.000000) scale(0.100000,-0.100000)"

@@ -38,7 +38,7 @@
   width: 60px;
   height: 60px;
   /* Center align the SVG, to the button */
-  margin: 0px 0px 0px -5px; /* top right bottom left */
+  margin: 0px 0px 0px -6px; /* top right bottom left */
 }
 
 .floating-button-sent svg {
@@ -78,6 +78,10 @@
   width: 275px;
   height: auto;
   border-radius: 10px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 .floating-form input ,

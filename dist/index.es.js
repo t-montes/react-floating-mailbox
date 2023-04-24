@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -27,7 +27,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".unactive{display:none!important}.floating-button,.floating-button-sent{bottom:20px;position:fixed;right:20px;transition:all .3s ease-in-out;z-index:999}.floating-button button,.floating-button-sent button{border:none;border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,.2);color:#fff;font-size:20px;height:60px;outline:none;width:60px}.floating-button button{background-color:#4caf50;cursor:pointer}.floating-button-sent button{background-color:#3e8e41;cursor:default;margin-bottom:6px}.floating-button svg{height:60px;margin:0 0 0 -5px;width:60px}.floating-button-sent svg{height:40px;margin:5px 0 0;width:40px}.floating-button button:hover{background-color:#3e8e41}.floating-button button:focus{outline:none}.floating-button button:active{transform:translateY(2px)}.wiggler{animation:wiggle .1s infinite alternate}.floating-form{align-items:center;background-color:#fff;border-radius:10px;bottom:80px;box-shadow:0 0 10px rgba(0,0,0,.2);display:flex;flex-direction:column;height:auto;justify-content:center;padding:10px 20px;position:absolute;right:0;width:275px}.floating-form input,.floating-form textarea{border:1px solid #ccc;border-radius:5px;font-family:Open Sans,sans-serif;margin-bottom:10px;padding:10px;resize:none;width:100%}.floating-form textarea{height:100px}.floating-form button[type=submit]{background-color:#4caf50;border:none;border-radius:5px;color:#fff;cursor:pointer;height:auto;padding:5px}@keyframes wiggle{0%{transform:rotate(-2deg)}to{transform:rotate(2deg)}}";
+var css_248z = ".unactive{display:none!important}.floating-button,.floating-button-sent{bottom:20px;position:fixed;right:20px;transition:all .3s ease-in-out;z-index:999}.floating-button button,.floating-button-sent button{border:none;border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,.2);color:#fff;font-size:20px;height:60px;outline:none;width:60px}.floating-button button{background-color:#4caf50;cursor:pointer}.floating-button-sent button{background-color:#3e8e41;cursor:default;margin-bottom:6px}.floating-button svg{height:60px;margin:0 0 0 -6px;width:60px}.floating-button-sent svg{height:40px;margin:5px 0 0;width:40px}.floating-button button:hover{background-color:#3e8e41}.floating-button button:focus{outline:none}.floating-button button:active{transform:translateY(2px)}.wiggler{animation:wiggle .1s infinite alternate}.floating-form{align-items:center;background-color:#fff;border-radius:10px;bottom:80px;box-shadow:0 0 10px rgba(0,0,0,.2);display:flex;flex-direction:column;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;height:auto;justify-content:center;padding:10px 20px;position:absolute;right:0;text-align:center;width:275px}.floating-form input,.floating-form textarea{border:1px solid #ccc;border-radius:5px;font-family:Open Sans,sans-serif;margin-bottom:10px;padding:10px;resize:none;width:100%}.floating-form textarea{height:100px}.floating-form button[type=submit]{background-color:#4caf50;border:none;border-radius:5px;color:#fff;cursor:pointer;height:auto;padding:5px}@keyframes wiggle{0%{transform:rotate(-2deg)}to{transform:rotate(2deg)}}";
 styleInject(css_248z);
 
 const store = {
@@ -160,7 +160,11 @@ function FloatingMailbox(props) {
    */
 
   const [isOpen, setIsOpen] = useState(false);
+  const [hasBeenOpened, setHasBeenOpened] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  useEffect(() => {
+    setHasBeenOpened(true);
+  }, [isOpen]);
   function sendEmail(e) {
     e.preventDefault();
     emailjs.sendForm(props.serviceId, props.templateId, e.target, props.userId).then(result => {
@@ -188,7 +192,7 @@ function FloatingMailbox(props) {
   }, /*#__PURE__*/React.createElement("button", {
     onClick: () => setIsOpen(!isOpen)
   }, /*#__PURE__*/React.createElement("svg", {
-    className: `${isOpen ? "" : "wiggler"}`,
+    className: `${hasBeenOpened ? "" : "wiggler"}`,
     version: "1.0",
     xmlns: "http://www.w3.org/2000/svg",
     width: "560.000000pt",
