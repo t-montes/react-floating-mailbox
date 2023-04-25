@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./FloatingMailbox.css";
 import emailjs from 'emailjs-com';
 
@@ -40,8 +41,8 @@ function FloatingMailbox(props) {
     return (
       <React.Fragment>
         { isSent ?
-        <div className="floating-button-sent">
-          <button>
+        <div className="floating-button-sent d-flex justify-content-center">
+          <button className="btn btn-primary">
           <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
           width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
           preserveAspectRatio="xMidYMid meet">
@@ -56,7 +57,7 @@ function FloatingMailbox(props) {
           </button>
         </div>
         :
-        <div className="floating-button">
+        <div className="floating-button d-flex justify-content-center">
             <button onClick={() => setIsOpen(!isOpen)}>
             <svg className={`${hasBeenOpened ? "" : "wiggler"}`} version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="560.000000pt" height="560.000000pt" viewBox="0 0 560.000000 560.000000"
