@@ -39,6 +39,7 @@
   height: 60px;
   /* Center align the SVG, to the button */
   margin: 0px 0px 0px -6px; /* top right bottom left */
+  -webkit-margin: 0px 0px 0px -6px; /* top right bottom left */
 }
 
 .floating-button-sent svg {
