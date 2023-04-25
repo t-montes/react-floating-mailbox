@@ -39,6 +39,7 @@
     "@rollup/plugin-node-resolve": "^15.0.2",
     "babel-loader": "^9.1.2",
     "emailjs-com": "^3.2.0",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.0.0",
     "rollup": "^2.79.1",
@@ -51,6 +52,7 @@
     "react": "^18.2.0"
   },
   "dependencies": {
-    "emailjs-com": "^3.2.0"
+    "emailjs-com": "^3.2.0",
+    "normalize.css": "^8.0.1"
   }
 }
