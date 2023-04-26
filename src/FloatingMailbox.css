@@ -2,6 +2,11 @@
   display: none !important;
 }
 
+.disclaimer {
+  font-size: 14px;
+  color: red;
+}
+
 .floating-button-sent,
 .floating-button {
   position: fixed;
@@ -17,7 +22,6 @@
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  font-size: 18px;
   max-height: 65px;
   max-width: 65px;
   outline: none;
@@ -26,7 +30,7 @@
 .floating-button-sent svg,
 .floating-button svg {
   max-height: 100%;
-  max-width: 100%;
+  width: 100%;
 }
 
 .floating-button button {
@@ -68,7 +72,7 @@
   position: absolute;
   bottom: 80px;
   right: 0;
-  width: 340px;
+  width: 320px;
   height: auto;
   border-radius: 10px;
   text-align: center;
@@ -100,6 +104,7 @@
   height: auto;
   padding: 5px 5px 5px 5px; /* top right bottom left */
   cursor: pointer;
+  font-size: 18px;
 }
 
 @keyframes wiggle {

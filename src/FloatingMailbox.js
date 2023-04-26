@@ -11,31 +11,55 @@ function FloatingMailbox(props) {
      * @param {string} to [optional] - Email address to send the email to
      * @param {string} subject [optional] - Default (non- ) subject for the email
      * @param {string} header [optional] - Custom header for the email
+     * @param {string} lang [optional] - Language for the email; available: "en" (default), "es"
      */
+
+    if (!props.serviceId || !props.templateId || !props.userId)
+      throw new Error("serviceId, templateId, and userId must be non-empty strings.");
+    const lang = props.lang === "es" ? "es" : "en";
+
+    const msgs = {
+      "en": {
+        "error": "Error, please try again later.",
+        "submit": "Send",
+        "bodyplaceholder": "Write your message here...",
+      },
+      "es": {
+        "error": "Error, por favor intenta más tarde.",
+        "submit": "Enviar",
+        "bodyplaceholder": "Escribe tu mensaje aquí...",
+      }
+    }[lang]
 
     const [isOpen, setIsOpen] = useState(false);
     const [hasBeenOpened, setHasBeenOpened] = useState(false);
     const [isSent, setIsSent] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
-      setHasBeenOpened(true);
+      if (isOpen) 
+        setHasBeenOpened(true);
     }, [isOpen]);
 
     function sendEmail(e) {
       e.preventDefault();
-      emailjs.sendForm(
-          props.serviceId,
-          props.templateId,
-          e.target,
-          props.userId
-        ).then(
-          (result) => {
-            console.log(result.text);
-            if (result.text === "OK")
-              setIsSent(!isSent);
-          },
-          (error)  => console.log(error.text)
-        );
+      if (!isSubmitted) {
+        setIsSubmitted(true);
+        emailjs.sendForm(
+            props.serviceId,
+            props.templateId,
+            e.target,
+            props.userId
+          ).then(
+            (result) => {
+              console.log(result.text);
+              if (result.text === "OK")
+                setIsSent(!isSent);
+            },
+            (error) => setIsError(true)
+          );
+      }
     }
 
     return (
@@ -98,8 +122,9 @@ function FloatingMailbox(props) {
                 :
                 <input type="text" name="subject" placeholder="Subject" required />
               }
-              <textarea name="message" placeholder="Write your message here..." required />
-              <button type="submit">Send</button>
+              <textarea name="message" placeholder={msgs.bodyplaceholder} required />
+              <p className={`disclaimer ${isError ? "" : "unactive"}`}>{msgs.error}</p>
+              <button type="submit">{msgs.submit}</button>
           </form>
         </div>
         }

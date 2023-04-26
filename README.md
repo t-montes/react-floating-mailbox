@@ -51,6 +51,7 @@ The following props can be set to the `FloatingMailbox` component:
 - `to`: (Optional) The email address to send the email to. If omitted, the user will be prompted to enter an email address.
 - `subject`: (Optional) The default subject for the email. If omitted, the user will be prompted to enter a subject.
 - `header`: (Optional) The header text to display in the modal. If omitted, no header text will be used.
+- `lang`: (Optional) The language to use for the modal. If omitted, the language will default to English. Currently supported languages are English (`en`) and Spanish (`es`).
 
 ## Contributing
 
