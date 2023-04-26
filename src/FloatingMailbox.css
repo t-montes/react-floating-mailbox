@@ -43,6 +43,8 @@
 .floating-button-sent button {
   background-color: #3e8e41;
   cursor: default;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
 }
 
 .floating-button button:hover {
